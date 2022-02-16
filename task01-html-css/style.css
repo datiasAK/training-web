@@ -19,6 +19,18 @@
   rgba(255, 255, 255, 0) 50.33%,
   #000000 97.62%);
   border-radius: 20.5px;
+  text-align: center;
+}
+
+.character-name {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 28px;
+  color: #fff;
+  position: relative;
+  top: 212px;
 }
 
 #luffy {
