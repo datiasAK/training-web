@@ -12,6 +12,15 @@
   background-size: cover;
 }
 
+.character-gradient {
+  height: inherit;
+  background: linear-gradient(
+  180deg, 
+  rgba(255, 255, 255, 0) 50.33%,
+  #000000 97.62%);
+  border-radius: 20.5px;
+}
+
 #luffy {
   background-image: url(../img/Luffy.png);
   background-position: 50% 72%;
