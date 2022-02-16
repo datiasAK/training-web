@@ -2,3 +2,32 @@
   margin: 0;
   padding: 0;
 }
+
+.character {
+  display: inline-block;
+  width: 219.74px;
+  height: 279px;
+  margin: 10px;
+  border-radius: 20.5px;
+  background-size: cover;
+}
+
+#luffy {
+  background-image: url(../img/Luffy.png);
+  background-position: 50% 72%;
+}
+
+#ace {
+  background-image: url(../img/Ace.png);
+  background-position: 50% 50%;
+}
+
+#zoro {
+  background-image: url(../img/Zoro.png);
+  background-position: 50% 50%;
+}
+
+#nico {
+  background-image: url(../img/Nico.png);
+  background-position: 50% 3%;
+}
