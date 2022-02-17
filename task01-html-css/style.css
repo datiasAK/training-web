@@ -3,23 +3,36 @@
   padding: 0;
 }
 
+body {
+  text-align: center;
+}
+
 .character {
   display: inline-block;
   width: 219.74px;
   height: 279px;
   margin: 10px;
   border-radius: 20.5px;
-  background-size: cover;
+}
+
+.character-image {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  object-fit: cover;
 }
 
 .character-gradient {
   height: inherit;
+  width: inherit;
+  border-radius: inherit;
   background: linear-gradient(
   180deg, 
   rgba(255, 255, 255, 0) 50.33%,
   #000000 97.62%);
-  border-radius: 20.5px;
-  text-align: center;
+  position: absolute;
+  z-index: 10;
 }
 
 .character-name {
@@ -28,27 +41,15 @@
   font-weight: bold;
   font-size: 22px;
   line-height: 28px;
+  width: inherit;
+  text-align: center;
   color: #fff;
-  position: relative;
-  top: 212px;
+  position: absolute;
+  top: 222px;
+  z-index: 20;
 }
 
-#luffy {
-  background-image: url(../img/Luffy.png);
-  background-position: 50% 72%;
-}
-
-#ace {
-  background-image: url(../img/Ace.png);
-  background-position: 50% 50%;
-}
-
-#zoro {
-  background-image: url(../img/Zoro.png);
-  background-position: 50% 50%;
-}
-
-#nico {
-  background-image: url(../img/Nico.png);
-  background-position: 50% 3%;
-}
+#luffy{ object-position: 50% 72%; }
+#ace  { object-position: 50% 50%; }
+#zoro { object-position: 50% 50%; }
+#nico { object-position: 50% 5%; }
