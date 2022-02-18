@@ -27,10 +27,11 @@ body {
   height: inherit;
   width: inherit;
   border-radius: inherit;
-  background: linear-gradient(
-  180deg, 
-  rgba(255, 255, 255, 0) 50.33%,
-  #000000 97.62%);
+  background: 
+    linear-gradient(180deg, 
+    #fff 50.33%,
+    #000 97.62%);
+  mix-blend-mode: multiply;
   position: absolute;
   z-index: 10;
 }
@@ -45,11 +46,11 @@ body {
   text-align: center;
   color: #fff;
   position: absolute;
-  top: 222px;
+  top: 232px;
   z-index: 20;
 }
 
-#luffy{ object-position: 50% 72%; }
+#luffy{ object-position: 50% 70%; }
 #ace  { object-position: 50% 50%; }
 #zoro { object-position: 50% 50%; }
 #nico { object-position: 50% 5%; }
