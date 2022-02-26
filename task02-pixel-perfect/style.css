@@ -18,10 +18,10 @@ body {
 }
 
 .character {
+  position: relative;
   width: 219.74px;
   height: 279px;
   border-radius: 20.5px;
-  position: relative;
 }
 
 .character__image {
@@ -37,6 +37,8 @@ body {
 .character__image--nico{ object-position: 50% 5%; }
 
 .character__gradient {
+  position: absolute;
+  z-index: 10;
   height: inherit;
   width: inherit;
   border-radius: inherit;
@@ -45,19 +47,17 @@ body {
     #fff 50.33%,
     #000 97.62%);
   mix-blend-mode: multiply;
-  position: absolute;
-  z-index: 10;
 }
 
 .character__name {
+  position: absolute;
+  top: 232px;
+  z-index: 20;
+  text-align: center;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
   line-height: 28px;
   width: inherit;
-  text-align: center;
   color: #fff;
-  position: absolute;
-  top: 232px;
-  z-index: 20;
 }
