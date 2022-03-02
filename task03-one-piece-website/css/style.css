@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'one-piece-icons';
+  src: url("/lib/fonts/one-piece-icons.ttf?72ce3m") format("truetype"), url("/lib/fonts/one-piece-icons.woff?72ce3m") format("woff"), url("/lib/fonts/one-piece-icons.svg?72ce3m#one-piece-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'one-piece-icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ico-location:before {
+  content: "\e904";
+}
+
+.ico-arrow:before {
+  content: "\e900";
+}
+
+.ico-menu:before {
+  content: "\e901";
+}
+
+.ico-search:before {
+  content: "\e902";
+}
+
+.ico-x:before {
+  content: "\e903";
+}
+/*# sourceMappingURL=style.css.map */
