@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'one-piece-icons';
   src:
-    url('fonts/one-piece-icons.ttf?v0fpry') format('truetype'),
-    url('fonts/one-piece-icons.woff?v0fpry') format('woff'),
-    url('fonts/one-piece-icons.svg?v0fpry#one-piece-icons') format('svg');
+    url('/lib/fonts/one-piece-icons.ttf?72ce3m') format('truetype'),
+    url('/lib/fonts/one-piece-icons.woff?72ce3m') format('woff'),
+    url('/lib/fonts/one-piece-icons.svg?72ce3m#one-piece-icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -24,12 +24,18 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ico-menu:before {
+.ico-location:before {
+  content: "\e904";
+}
+.ico-arrow:before {
   content: "\e900";
 }
-.ico-search:before {
+.ico-menu:before {
   content: "\e901";
 }
-.ico-x:before {
+.ico-search:before {
   content: "\e902";
+}
+.ico-x:before {
+  content: "\e903";
 }
