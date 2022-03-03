@@ -94,7 +94,76 @@ body {
 }
 
 .ico-location {
-  font-size: 12px;
+  font-size: 10px;
   vertical-align: baseline;
+}
+
+.character {
+  position: relative;
+}
+
+.character__img {
+  width: 182px;
+  height: 231px;
+}
+
+.character__name {
+  position: absolute;
+  top: 175px;
+  width: 182px;
+  height: 32px;
+  line-height: 46px;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+}
+
+.character__gradient {
+  position: absolute;
+  width: 182px;
+  height: 231px;
+  border-radius: 16.4px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50.33%, #fff), color-stop(97.62%, #000));
+  background: linear-gradient(180deg, #fff 50.33%, #000 97.62%);
+  mix-blend-mode: multiply;
+}
+
+.island {
+  position: relative;
+}
+
+.island__img {
+  width: 194px;
+  height: 193px;
+}
+
+.card-label--island {
+  position: absolute;
+  top: 137px;
+  left: 8px;
+}
+
+.mist-object {
+  position: relative;
+  height: 132px;
+  width: 358px;
+}
+
+.mist-object__img {
+  width: 174px;
+  height: 132px;
+  position: absolute;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+.mist-object:nth-child(4) {
+  display: none;
+}
+
+.card-label--mist {
+  position: absolute;
+  left: 117px;
 }
 /*# sourceMappingURL=style.css.map */

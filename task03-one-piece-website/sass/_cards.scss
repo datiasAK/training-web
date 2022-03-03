@@ -1,0 +1,75 @@
+// characters
+
+.character {
+  position: relative;
+
+  &__img {
+    width: 182px;
+    height: 231px;
+  }
+
+  &__name {
+    position: absolute;
+    top: 175px;
+    width: 182px;
+    height: 32px;
+    line-height: 46px;  //vertical align to bottom
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    color: white;
+  }
+
+  &__gradient {
+    position: absolute;
+    width: 182px;
+    height: 231px;
+    border-radius: 16.4px;
+    background: 
+      linear-gradient(180deg, 
+      #fff 50.33%,
+      #000 97.62%);
+  mix-blend-mode: multiply;
+  }
+}
+// islands
+
+.island {
+  position: relative;
+
+  &__img {
+    width: 194px;
+    height: 193px;
+  }
+}
+
+.card-label--island {
+  position: absolute;
+  top: 137px;
+  left: 8px;
+}
+
+
+// mist objects
+
+.mist-object {
+  position: relative;
+  height: 132px;
+  width: 358px;
+
+  &__img {
+    width: 174px;
+    height: 132px;
+    position: absolute;
+    object-fit:scale-down;
+  }
+
+  &:nth-child(4) {
+    display: none;
+  }
+}
+
+.card-label--mist {
+  position: absolute;
+  left: 117px;
+}
