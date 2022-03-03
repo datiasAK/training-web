@@ -1,0 +1,48 @@
+@use 'colors' as *;
+
+.card-label {
+  background-color: rgba($color: $primary-dark2, $alpha: 0.59);
+  backdrop-filter: blur(4px);
+
+  &__name {
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  &__description {
+    color: #F4F4F4;
+    font-weight: normal;
+    font-style:normal;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+
+    &--mist {
+      margin: 4px 0px;
+    }
+  }
+
+  &--island {
+    width: 178px;
+    height: 48px;
+    border-radius: 6px;
+    padding-top: 8px;
+    padding-left: 15px;
+  }
+
+  &--mist{
+    width: 241px;
+    height: 132px;
+    padding: 8px;
+    border-radius: 0 6px 6px 0;
+  }
+}
+
+.ico-location {
+  font-size: 12px;
+  vertical-align:baseline
+}
+
