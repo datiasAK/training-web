@@ -220,8 +220,65 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(196, 196, 196, 0)), color-stop(91.54%, #FFFFFF));
   background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 91.54%);
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 18px;
   position: relative;
   bottom: 167px;
+}
+
+@use 'colors' as *;
+.synopsis {
+  margin: 0 auto;
+  margin-top: 19px;
+  padding: 8px;
+  width: 358px;
+  height: 256px;
+  -webkit-box-shadow: 0 0 8px #B8E1FF;
+          box-shadow: 0 0 8px #B8E1FF;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.synopsis__logo {
+  display: none;
+}
+
+.synopsis__title {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 28px;
+  margin-bottom: 16px;
+}
+
+.synopsis__text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  margin-bottom: 20px;
+}
+
+.synopsis__text--read-all {
+  display: none;
+}
+
+.synopsis__button {
+  height: 48px;
+  width: 342px;
+  background: none;
+  border: none;
+  border-top: 0.5px solid #0C75AF;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #0C75AF;
+}
+
+.synopsis__button i {
+  vertical-align: middle;
+  font-size: 16px;
+  padding-right: 15px;
 }
 /*# sourceMappingURL=style.css.map */

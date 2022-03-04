@@ -1,0 +1,53 @@
+@use 'colors' as *;
+
+.synopsis {
+  margin: 0 auto;
+  margin-top: 19px;
+  padding: 8px;
+  width: 358px;
+  height: 256px;
+  box-shadow: 0 0 8px $primary-light1;
+  box-sizing: border-box;
+
+  &__logo {
+    display: none;
+  }
+
+  &__title {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 28px;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    margin-bottom: 20px;
+    &--read-all {
+      display: none;
+    }
+  }
+
+  &__button {
+    height: 48px;
+    width: 342px;
+    background: none;  
+    border: none;
+    border-top: .5px solid $primary-dark1;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: $primary-dark1;
+    & i {
+      vertical-align:middle;
+      font-size: 16px;
+      padding-right: 15px;
+    }
+  }
+}
