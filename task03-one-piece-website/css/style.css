@@ -166,4 +166,58 @@ body {
   position: absolute;
   left: 117px;
 }
+
+.header {
+  padding-left: 19px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100vw;
+}
+
+.header__menu {
+  font-size: 18px;
+}
+
+.header__logo {
+  width: 112.5px;
+  height: 40px;
+}
+
+.header__fill {
+  width: 16px;
+  height: 40px;
+}
+
+.main {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.main__img {
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 115.38vw;
+  height: 260px;
+  max-width: 768px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main__gradient {
+  width: 100vw;
+  max-width: 768px;
+  height: 163px;
+  position: absolute;
+  top: 137px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(196, 196, 196, 0)), color-stop(91.54%, #FFFFFF));
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #FFFFFF 91.54%);
+}
 /*# sourceMappingURL=style.css.map */

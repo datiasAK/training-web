@@ -1,0 +1,22 @@
+.header {
+  padding-left: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  
+  &__menu {
+    font-size: 18px;
+  }
+
+  &__logo {
+    width: 112.5px;
+    height: 40px;
+  }
+
+  &__fill {
+    width: 16px;
+    height: 40px;
+  }
+
+}

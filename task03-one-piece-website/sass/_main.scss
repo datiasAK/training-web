@@ -1,0 +1,25 @@
+.main {
+  width: 100vw;
+  overflow: hidden;
+  &__img {
+    // center image bigger than container
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 115.38vw;
+    height: 260px;
+    max-width: 768px;
+    object-fit: cover;
+  }
+
+  &__gradient {
+    width: 100vw;
+    max-width: 768px;
+    height: 163px;
+    position: absolute;
+    top: 137px;
+    background: 
+      linear-gradient(180deg, 
+      rgba(#c4c4c4, 0) 0%,
+      #FFFFFF 91.54%);
+  }
+}
