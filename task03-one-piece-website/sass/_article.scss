@@ -1,0 +1,44 @@
+@use 'colors';
+
+.article {
+  margin: 0 auto;
+  overflow-x: visible;
+  width: 359px;
+  &__flex {
+    display: flex;
+    &--characters {
+      overflow-x: scroll;
+      column-gap: 15px;
+      width:105%;
+    }
+    &--islands{
+      overflow-x: scroll;
+      column-gap: 17px;
+      width:115%;
+    }
+    &--mist {
+      flex-direction: column;
+      row-gap: 16px;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &__title {
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+    color: $black;
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    margin: 48px 0 32px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $primary-dark1;
+  }
+}
