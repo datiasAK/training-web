@@ -1,12 +1,12 @@
 .header {
-  padding-left: 19px;
+  padding: 19px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100vw;
   
   &__menu {
-    font-size: 18px;
+    font-size: 24px;
   }
 
   &__logo {

@@ -169,7 +169,7 @@ body, html {
 }
 
 .header {
-  padding-left: 19px;
+  padding: 19px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -183,7 +183,7 @@ body, html {
 }
 
 .header__menu {
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .header__logo {
@@ -236,6 +236,7 @@ body, html {
           box-shadow: 0 0 8px #B8E1FF;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border-radius: 6px;
 }
 
 .synopsis__logo {
