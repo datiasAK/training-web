@@ -1,0 +1,15 @@
+.footer {
+  padding: 48px 0;
+  margin-top: 70px;
+  text-align: center;
+  background-color: $primary-dark1;
+  &__text {
+    margin: 0 auto;
+    width: 286px;
+    margin-top: 38px;
+    color: white;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: .4px;
+  }
+}
