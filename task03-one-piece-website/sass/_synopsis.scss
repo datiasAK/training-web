@@ -20,7 +20,7 @@
     font-weight: bold;
     font-size: 22px;
     line-height: 28px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
   &__text {
@@ -29,14 +29,14 @@
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 0.25px;
-    margin-bottom: 20px;
+    margin: 4px 0 16px;
     &--read-all {
       display: none;
     }
   }
 
   &__button {
-    height: 48px;
+    height: 48.5px;
     width: 342px;
     background: none;  
     border: none;

@@ -176,14 +176,22 @@ body, html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: fixed;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100vw;
+  background-color: white;
+  z-index: 10;
 }
 
-.header__menu {
+.header__icon {
   font-size: 24px;
+}
+
+.header__icon--x {
+  display: none;
+  width: 18.38px;
 }
 
 .header__logo {
@@ -196,7 +204,101 @@ body, html {
   height: 40px;
 }
 
+.header__toggle {
+  outline: .5px solid red;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.header__toggle:checked ~ .op-characters {
+  display: none;
+}
+
+.header .menu {
+  position: absolute;
+  padding-top: 19px;
+  display: none;
+  left: 0;
+  top: 78px;
+  width: 100vw;
+  height: 406px;
+  z-index: 10;
+  text-align: center;
+  background-color: white;
+  -webkit-box-shadow: 0px 4px 3px #F3F3F3;
+          box-shadow: 0px 4px 3px #F3F3F3;
+}
+
+.header .menu__link {
+  display: block;
+  margin-bottom: 60px;
+  font-family: 'Roboto Slab';
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: .1px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #575757;
+}
+
+.header .menu__link:first-child {
+  color: #0C75AF;
+}
+
+.header .menu__lang {
+  width: 169px;
+  height: 31px;
+  padding: 0 31.6px;
+  margin-top: -14px;
+  -webkit-column-gap: 8px;
+          column-gap: 8px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+  background-color: #ECECEC;
+}
+
+.header .menu__lang span {
+  display: inline-block;
+  width: 67px;
+  font-family: 'Roboto Slab';
+  font-size: 18px;
+  font-weight: bold;
+  color: #575757;
+  line-height: 24px;
+  letter-spacing: .1px;
+}
+
+.header .menu__lang--es {
+  margin-left: 20px;
+  background: none;
+}
+
+.header__toggle:checked ~ .menu {
+  display: block;
+}
+
+.header__toggle:checked ~ .header__icon--menu {
+  display: none;
+}
+
+.header__toggle:checked ~ .header__icon--x {
+  display: inline;
+}
+
 .op-characters {
+  margin-top: 78px;
   width: 100vw;
   height: 260px;
   text-align: center;
@@ -249,7 +351,7 @@ body, html {
   font-weight: bold;
   font-size: 22px;
   line-height: 28px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .synopsis__text {
@@ -258,7 +360,7 @@ body, html {
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.25px;
-  margin-bottom: 20px;
+  margin: 4px 0 16px;
 }
 
 .synopsis__text--read-all {
@@ -266,7 +368,7 @@ body, html {
 }
 
 .synopsis__button {
-  height: 48px;
+  height: 48.5px;
   width: 342px;
   background: none;
   border: none;

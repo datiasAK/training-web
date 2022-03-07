@@ -10,9 +10,25 @@
 </head>
 <body>
   <header class="header">
-    <i class="ico-menu header__menu"></i>
+    <input type="checkbox" class="header__toggle">
+    <i class="ico-menu header__icon header__icon--menu"></i>
+    <i class="ico-x header__icon header__icon--x"></i>
     <img class="header__logo" src="/assets/img/op-logo.svg" alt="one piece logo">
     <div class="header__fill"></div>
+    <nav class="menu">
+      <a href="" class="menu__link">Home</a>
+      <a href="" class="menu__link">Characters</a>
+      <a href="" class="menu__link">Islands</a>
+      <a href="" class="menu__link">Mist Objects</a>
+      <button class="menu__lang menu__lang--en">
+        <span>English</span>
+        <img src="/assets/img/usa-flag.svg">
+      </button>
+      <button class="menu__lang menu__lang--es">
+        <span>Spanish</span>
+        <img src="/assets/img/spain-flag.svg">
+      </button>
+    </nav>
   </header>
 
   <main class="main">
