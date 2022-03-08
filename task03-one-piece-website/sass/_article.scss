@@ -1,3 +1,5 @@
+@use 'media-queries';
+
 .article {
   margin: 0 auto;
   overflow-x: visible;
@@ -38,5 +40,30 @@
   &__link {
     text-decoration: none;
     color: $primary-dark1;
+  }
+}
+
+@include media-queries.tablet {
+  .article {
+    width: 640px;
+
+    &__container--characters {
+      margin: 32px auto;
+    }
+    &__container--islands {
+      margin: 64px auto 32px;
+    }
+    &__container--mist {
+      margin: 58px auto 32px;
+    }
+    &__flex {
+      width: 100%;
+      justify-content: space-between;
+      &--mist {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
   }
 }

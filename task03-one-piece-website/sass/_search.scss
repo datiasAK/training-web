@@ -1,3 +1,5 @@
+@use 'media-queries';
+
 .search {
   width: 358px;
   height: 56px;
@@ -30,5 +32,12 @@
     margin-left: 11px;
     font-size: 25px;
     cursor: pointer;
+  }
+}
+
+@include media-queries.tablet{
+  .search {
+    margin: 32px auto 0;
+    width: 640px;
   }
 }

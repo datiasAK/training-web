@@ -1,3 +1,5 @@
+@use 'media-queries';
+
 .card-label {
   background-color: rgba($color: $primary-dark2, $alpha: 0.59);
   backdrop-filter: blur(4px);
@@ -42,4 +44,23 @@
 .ico-location {
   font-size: 10px;
   vertical-align:baseline
+}
+
+@include media-queries.tablet {
+  .card-label {
+    &__name {
+      font-family: 'Roboto Slab';
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: .1px;
+    }
+    &--island {
+      width: 183.5px;
+      height: 49.5px;
+    }
+    &--mist {
+      width: 200px;
+      height: 175px;
+    }
+  }
 }

@@ -1,8 +1,12 @@
+@use 'media-queries' as *;
+
 .synopsis {
   margin: 0 auto;
   margin-top: 19px;
   padding: 8px 8px 0px;
   width: 358px;
+  position: relative;
+  background-color: white;
 
   box-shadow: 0 0 8px $primary-light1;
   box-sizing: border-box;
@@ -13,7 +17,7 @@
     width: 163px;
     height: 58px;
     position: absolute;
-    top: 305px;
+    top: -91px;
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -26,16 +30,16 @@
     font-weight: bold;
     font-size: 22px;
     line-height: 28px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
   }
 
   &__text {
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
-    line-height: 21.33px;
+    line-height: 20px;
     letter-spacing: 0.25px;
-    margin: 4px 0 16px;
+    margin-bottom: 20px;
     &--read-all {
       display: none;
     }
@@ -44,6 +48,7 @@
   &__button {
     height: 48px;
     width: 342px;
+    margin-top: -4px;
     background: none;  
     border: none;
     border-top: .5px solid $primary-dark1;
@@ -71,6 +76,7 @@
     margin-right: auto;
     left: 0;
     right: 0;
+    z-index: 10;
   }
   &__toggle:checked {
     top: 845px;
@@ -101,5 +107,27 @@
   }
   &__toggle:checked ~ .op-characters {
     margin-top: 64px;
+  }
+}
+
+@include tablet {
+  .synopsis {
+    width: 640px;
+    &__button {
+      width: 624px;
+    }
+    &__toggle {
+      top: 664px;
+      width: 624px;
+    }
+    &__toggle:checked ~ & {
+      margin-top: 19px;
+    }
+    &__toggle:checked ~ & > &__logo{
+      display: none;
+    }
+    &__toggle:checked ~ .op-characters {
+      margin-top: 109px;
+    }
   }
 }

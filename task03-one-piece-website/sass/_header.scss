@@ -1,3 +1,5 @@
+@use 'media-queries';
+
 .header {
   padding: 19px;
   display: flex;
@@ -99,5 +101,18 @@
   }
   &__toggle:checked ~ &__icon--x {
     display: inline;
+  }
+}
+
+@include media-queries.tablet {
+  .header {
+    padding: 26px 67px 25px;
+    &__logo {
+      width: 163px;
+      height: 58px;
+    }
+    .menu {
+      top: 109px;
+    }
   }
 }

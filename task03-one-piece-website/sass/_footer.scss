@@ -1,3 +1,5 @@
+@use 'media-queries';
+
 .footer {
   padding: 48px 0;
   margin-top: 70px;
@@ -11,5 +13,21 @@
     font-size: 14px;
     line-height: 16px;
     letter-spacing: .4px;
+  }
+}
+
+@include media-queries.tablet {
+  .footer {
+    height: 271px;
+    margin-top: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 38px;
+    
+    &__text {
+      margin: 0;
+      text-align: left;
+    }
   }
 }

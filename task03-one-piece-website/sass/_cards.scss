@@ -1,3 +1,5 @@
+@use 'media-queries';
+
 // characters
 
 .character {
@@ -13,7 +15,7 @@
     top: 175px;
     width: 182px;
     height: 32px;
-    line-height: 46px;  //vertical align to bottom
+    line-height: 46px;  //vertical align text to bottom: line-height = 2*height - font-size
     font-size: 18px;
     font-weight: 500;
     text-align: center;
@@ -32,6 +34,7 @@
   mix-blend-mode: multiply;
   }
 }
+
 // islands
 
 .island {
@@ -49,7 +52,6 @@
   left: 8px;
 }
 
-
 // mist objects
 
 .mist-object {
@@ -61,7 +63,6 @@
     width: 174px;
     height: 132px;
     position: absolute;
-    object-fit:scale-down;
   }
 
   &:nth-child(4) {
@@ -72,4 +73,50 @@
 .card-label--mist {
   position: absolute;
   left: 117px;
+}
+
+@include media-queries.tablet {
+  .character {
+    &__img {
+      width: 145px;
+      height: 184px;
+    }
+    &__name {
+      top: 140px;
+      height: 24px;
+      line-height: 32px;
+      width: 145px;
+      font-family: 'Roboto Slab';
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 0.1px;
+    }
+    &__gradient {
+      width: 145px;
+      height: 184px;
+      border-radius: 13.5px;
+    }
+  }
+  .island__img {
+    width: 200px;
+    height: 199px;
+  }
+  .mist-object {
+    width: 310px;
+    height: 175px;
+    &__img {
+      width: 181px;
+      height: 175px;
+      object-fit:cover;
+      object-position: 0;
+    }
+    &:nth-child(4) {
+      display: block;
+    }
+  }
+  .card-label--mist {
+    position: absolute;
+    left: 110px;
+  }
+  
 }

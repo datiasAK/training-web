@@ -1,3 +1,5 @@
+@use 'media-queries' as *;
+
 .op-characters {
   margin-top: 78px;
   width: 100vw;
@@ -22,8 +24,22 @@
       rgba(#c4c4c4, 0) 0%,
       #FFFFFF 91.54%);
     display: block;
-    margin: 0 auto 18px;
+    margin: 0 auto;
     position: relative;
     bottom: 167px;
+  }
+}
+
+@include tablet {
+  .op-characters {
+    margin-top: 109px;
+    height: 368px;
+    &__img {
+      width: 100%;
+      height: 444px;
+    }
+    &__gradient {
+      display: none;
+    }
   }
 }
