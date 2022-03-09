@@ -1,4 +1,4 @@
-@use 'media-queries' as *;
+@use 'media-queries';
 
 .synopsis {
   margin: 0 auto;
@@ -40,6 +40,7 @@
     line-height: 20px;
     letter-spacing: 0.25px;
     margin-bottom: 20px;
+    text-align: left;
     &--read-all {
       display: none;
     }
@@ -110,7 +111,7 @@
   }
 }
 
-@include tablet {
+@include media-queries.tablet {
   .synopsis {
     width: 640px;
     &__button {
@@ -128,6 +129,25 @@
     }
     &__toggle:checked ~ .op-characters {
       margin-top: 109px;
+    }
+  }
+}
+
+@include media-queries.desktop {
+  .synopsis {
+    display: inline-block;
+    width: 300px;
+    height: 628px;
+    position: relative;
+    right: 5px;
+    padding: 32px 16px 0;
+    border-radius: 0 6px 6px 0;
+    vertical-align:bottom;
+    &__button, &__toggle {
+      display: none;
+    }
+    &__text--read-all {
+      display: block;
     }
   }
 }

@@ -31,3 +31,9 @@
     }
   }
 }
+
+@include media-queries.desktop {
+  .footer {
+    margin-top: 70px;
+  }
+}

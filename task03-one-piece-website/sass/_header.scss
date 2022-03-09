@@ -42,7 +42,7 @@
   .menu {
     position: absolute;
     padding-top: 19px;
-    display: none; //none
+    display: none;
     left: 0;
     top: 78px;
     width: 100vw;
@@ -113,6 +113,40 @@
     }
     .menu {
       top: 109px;
+    }
+  }
+}
+
+@include media-queries.desktop {
+  .header {
+    padding: 21px 170px;
+    justify-content: center;
+    column-gap: 69px;
+
+    &__icon, &__toggle, &__fill {
+      display: none;
+    }
+    .menu {
+      display: flex;
+      position: static;
+      height: 31px;
+      width: 708px;
+      padding: 0;
+      box-shadow: none;
+      align-items: flex-start;
+      &__link {
+        margin-right: 48px;
+      }
+      &__lang {
+        width: 90px;
+        margin: 0;
+        &--en {
+          margin-right: 20px;
+        }
+        & span {
+          display: none;
+        }
+      }
     }
   }
 }

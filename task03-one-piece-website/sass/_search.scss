@@ -35,9 +35,16 @@
   }
 }
 
-@include media-queries.tablet{
+@include media-queries.tablet {
   .search {
     margin: 32px auto 0;
     width: 640px;
+  }
+}
+
+@include media-queries.desktop {
+  .search {
+    margin-top: 48px;
+    width: 940px;
   }
 }

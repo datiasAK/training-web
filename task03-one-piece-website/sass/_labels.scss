@@ -64,3 +64,31 @@
     }
   }
 }
+
+@include media-queries.desktop {
+  .card-label {
+    &__name {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    &__description {
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: .15px;
+    }
+    &--island {
+      width: 275.3px;
+      height: 74.2px;
+    }
+    &--mist {
+      width: 297.4px;
+      height: 254.3px;
+      padding: 11.9px;
+    }
+  }
+
+  .ico-location {
+    font-size: 14px;
+    margin-right: 4px;
+  }
+}

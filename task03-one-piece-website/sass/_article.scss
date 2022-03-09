@@ -3,6 +3,7 @@
 .article {
   margin: 0 auto;
   overflow-x: visible;
+  text-align: left;
   width: 359px;
   &__flex {
     display: flex;
@@ -64,6 +65,25 @@
         flex-direction: row;
         flex-wrap: wrap;
       }
+    }
+  }
+}
+
+@include media-queries.desktop {
+  .article {
+    width: 940px;
+
+    &__title {
+      font-weight: normal;
+      font-size: 28px;
+      line-height: 36px;
+    }
+
+    &__container--characters {
+      margin: 48px auto 32px;
+    }
+    &__container--islands , &__container--mist {
+      margin: 64px auto 32px;
     }
   }
 }

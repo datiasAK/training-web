@@ -114,9 +114,57 @@
       display: block;
     }
   }
+
+  .card-label--island {
+    top: 141px;
+    left: 12.3px;
+  }
+
   .card-label--mist {
     position: absolute;
     left: 110px;
   }
   
+}
+
+@include media-queries.desktop {
+  .character {
+    &__img {
+      width: 220px;
+      height: 279px;
+    }
+    &__name {
+      top: 211px;
+      width: 220px;
+      height: 38px;
+      font-size: 22px;
+      line-height: 54px;
+    }
+    &__gradient {
+      width: 220px;
+      height: 279px;
+    }
+  }
+
+  .island__img {
+    width: 300px;
+    height: 298.5px;
+  }
+
+  .card-label--island {
+    top: 210px;
+    padding: 12.3px 0 12.3px 23.2px;
+  }
+
+  .mist-object {
+    width: 461px;
+    height: 254.3px;
+    &__img {
+      width: 263.2px;
+      height: 254.3px;
+    }
+  }
+
+  .card-label--mist {
+    left: 163.6px;  }
 }
