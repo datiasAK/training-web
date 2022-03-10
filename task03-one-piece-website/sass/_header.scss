@@ -13,9 +13,19 @@
   
   &__icon {
     font-size: 1.5rem;
+    cursor: pointer;
+
+    &.hidden {
+      display: none;
+    }
+
     &--x { 
       display: none;
       width: 18.38px;
+
+      &.visible {
+        display: inline;
+      }
     }
   }
 
@@ -27,16 +37,6 @@
   &__fill {
     width: 16px;
     height: 40px;
-  }
-
-  &__toggle {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    opacity: 0;
-    cursor: pointer;
-
-    &:checked ~ .op-characters { display: none; }
   }
 
   .menu {
@@ -51,6 +51,10 @@
     text-align: center;
     background-color: white;
     box-shadow: 0px 4px 3px color.$grey5;
+
+    &.visible {
+      display: block;
+    }
 
     &__link {
       display: block;
@@ -94,12 +98,12 @@
         margin-left: 20px;
         background: none;
       }
+
+      &--open {
+        display: block;
+      }
     }
   }
-
-  &__toggle:checked ~ .menu { display: block; }
-  &__toggle:checked ~ &__icon--menu { display: none; }
-  &__toggle:checked ~ &__icon--x { display: inline; }
 }
 
 @include media-query.tablet {
@@ -121,7 +125,7 @@
     justify-content: center;
     column-gap: 69px;
 
-    &__icon, &__toggle, &__fill { display: none; }
+    &__icon, &__fill { display: none; }
 
     .menu {
       display: flex;
@@ -131,8 +135,12 @@
       padding: 0;
       box-shadow: none;
       align-items: flex-start;
+      justify-content: flex-start ;
 
-      &__link { margin-right: 48px; }
+      &__link { 
+        margin-right: 48px;
+        white-space: nowrap;
+      }
 
       &__lang {
         width: 90px;

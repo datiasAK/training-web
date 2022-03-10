@@ -6,6 +6,10 @@
   height: 260px;
   text-align: center;
 
+  &.read-all {
+    margin-top: 64px;
+  }
+
   &__img {
     // center image bigger than container
     margin-left: 50%;
@@ -35,6 +39,10 @@
   .op-characters {
     margin-top: 109px;
     height: 368px;
+
+    &.read-all {
+      margin-top: 109px;
+    }
 
     &__img { height: 444px; }
     &__gradient { display: none; }

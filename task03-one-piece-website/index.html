@@ -10,16 +10,15 @@
 </head>
 <body>
   <header class="header">
-    <input type="checkbox" class="header__toggle">
     <i class="ico-menu header__icon header__icon--menu"></i>
     <i class="ico-x header__icon header__icon--x"></i>
     <img class="header__logo" src="/assets/img/op-logo.svg" alt="one piece logo">
     <div class="header__fill"></div>
     <nav class="menu">
-      <a href="" class="menu__link">Home</a>
-      <a href="" class="menu__link">Characters</a>
-      <a href="" class="menu__link">Islands</a>
-      <a href="" class="menu__link">Mist Objects</a>
+      <a href="#" class="menu__link">Home</a>
+      <a href="/characters" class="menu__link">Characters</a>
+      <a href="/islands" class="menu__link">Islands</a>
+      <a href="/mist-objects" class="menu__link">Mist Objects</a>
       <button class="menu__lang menu__lang--en">
         <span>English</span>
         <img src="/assets/img/usa-flag.svg">
@@ -32,7 +31,6 @@
   </header>
 
   <main class="main">
-    <input type="checkbox" class="synopsis__toggle">
     <div class="op-characters">
       <img class="op-characters__img" src="/assets/img/op-characters.svg" srcset="/assets/img/op-characters-big.png 1280w" alt="one piece main characters">
       <div class="op-characters__gradient"></div>
@@ -60,7 +58,7 @@
     <article class="article article--characters">
       <div class="article__container article__container--characters">
         <h3 class="article__title article__title--characters">Characters</h3>
-        <a href="#" class="article__link article__link--characters">See all</a>
+        <a href="/characters" class="article__link article__link--characters">See all</a>
       </div>
       <div class="article__flex article__flex--characters">
         <section class="character">
@@ -89,7 +87,7 @@
     <article class="article article--islands">
       <div class="article__container article__container--islands">
         <h3 class="article__title article__title--island">Islands</h3>
-        <a href="#" class="article__link article__link--islands">See all</a>
+        <a href="/islands" class="article__link article__link--islands">See all</a>
       </div>
       <div class="article__flex article__flex--islands">
         <section class="island">
@@ -128,7 +126,7 @@
     <article class="article article--mist">
       <div class="article__container article__container--mist">
         <h3 class="article__title article__title--mist">Mist Objects</h3>
-        <a href="#" class="article__link article__link--mist">See all</a>
+        <a href="/mist-objects" class="article__link article__link--mist">See all</a>
       </div>
       <div class="article__flex article__flex--mist">
         <section class="mist-object">
@@ -179,5 +177,7 @@
     <img src="/assets/img/op-skull.svg" alt="one piece skull" class="footer__img">
     <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit at vel congue scelerisque tortor tortor.</p>
   </footer>
+
+  <script src="/task03-one-piece-website/script.js"></script>
 </body>
 </html>
