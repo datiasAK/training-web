@@ -1,10 +1,11 @@
-@use 'media-queries';
+@use 'media-query';
 
 .op-characters {
   margin-top: 78px;
   width: 100vw;
   height: 260px;
   text-align: center;
+
   &__img {
     // center image bigger than container
     margin-left: 50%;
@@ -30,24 +31,20 @@
   }
 }
 
-@include media-queries.tablet {
+@include media-query.tablet {
   .op-characters {
     margin-top: 109px;
     height: 368px;
-    &__img {
-      height: 444px;
-    }
-    &__gradient {
-      display: none;
-    }
+
+    &__img { height: 444px; }
+    &__gradient { display: none; }
   }
 }
 
-@include media-queries.desktop {
+@include media-query.desktop {
 
-  .main {
-    text-align: center;
-  }
+  .main { text-align: center; }
+
   .op-characters {
     position: relative;
     top: 4px;
@@ -55,6 +52,7 @@
     width: 640px;
     height: 628px;
     display: inline-block;
+
     &__img{
       height: 628px;
       max-width: 640px;

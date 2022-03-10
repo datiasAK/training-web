@@ -1,10 +1,11 @@
-@use 'media-queries';
+@use 'color';
+@use 'media-query';
 
 .search {
   width: 358px;
   height: 56px;
   margin: 48px auto 0;
-  border: 1px solid $grey2;
+  border: 1px solid color.$grey2;
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -15,34 +16,32 @@
     border: none;
 
     &::placeholder {
-      font-size: 16px;
-      line-height: 20px;
-      letter-spacing: .25px;
-      color: $grey1;
+      font-size: 1rem;
+      line-height: 1.25rem;
+      letter-spacing: .0156rem;
+      color: color.$grey1;
       font-family: 'Roboto', sans-serif;
     }
 
-    &:focus {
-      outline: none;
-    }
+    &:focus { outline: none; }
   }
 
   &__icon {
-    color: $grey1;
+    color: color.$grey1;
     margin-left: 11px;
-    font-size: 25px;
+    font-size: 1.5625rem;
     cursor: pointer;
   }
 }
 
-@include media-queries.tablet {
+@include media-query.tablet {
   .search {
     margin: 32px auto 0;
     width: 640px;
   }
 }
 
-@include media-queries.desktop {
+@include media-query.desktop {
   .search {
     margin-top: 48px;
     width: 940px;

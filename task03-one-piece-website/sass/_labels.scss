@@ -1,28 +1,27 @@
-@use 'media-queries';
+@use 'color';
+@use 'media-query';
 
 .card-label {
-  background-color: rgba($color: $primary-dark2, $alpha: 0.59);
+  background-color: rgba($color: color.$primary-dark2, $alpha: 0.59);
   backdrop-filter: blur(4px);
 
   &__name {
     color: white;
     font-weight: bold;
-    font-size: 13px;
-    line-height: 16px;
-    letter-spacing: 0.5px;
+    font-size: .8125rem;
+    line-height: 1rem;
+    letter-spacing: .0313rem;
   }
 
   &__description {
     color: #F4F4F4;
     font-weight: normal;
     font-style:normal;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 0.4px;
+    font-size: .875rem;
+    line-height: 1rem;
+    letter-spacing: .025rem;
 
-    &--mist {
-      margin: 4px 0px;
-    }
+    &--mist { margin: 4px 0px; }
   }
 
   &--island {
@@ -46,18 +45,20 @@
   vertical-align:baseline
 }
 
-@include media-queries.tablet {
+@include media-query.tablet {
   .card-label {
     &__name {
       font-family: 'Roboto Slab';
-      font-size: 16px;
-      line-height: 20px;
-      letter-spacing: .1px;
+      font-size: 1rem;
+      line-height: 1.25rem;
+      letter-spacing: .0063rem;
     }
+
     &--island {
       width: 183.5px;
       height: 49.5px;
     }
+
     &--mist {
       width: 200px;
       height: 175px;
@@ -65,21 +66,24 @@
   }
 }
 
-@include media-queries.desktop {
+@include media-query.desktop {
   .card-label {
     &__name {
-      font-size: 18px;
-      line-height: 24px;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
     }
+
     &__description {
-      font-size: 18px;
-      line-height: 24px;
-      letter-spacing: .15px;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      letter-spacing: .0094rem;
     }
+
     &--island {
       width: 275.3px;
       height: 74.2px;
     }
+
     &--mist {
       width: 297.4px;
       height: 254.3px;
@@ -88,7 +92,7 @@
   }
 
   .ico-location {
-    font-size: 14px;
+    font-size: .875rem;
     margin-right: 4px;
   }
 }

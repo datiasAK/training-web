@@ -1,22 +1,24 @@
-@use 'media-queries';
+@use 'color';
+@use 'media-query';
 
 .footer {
   padding: 48px 0;
   margin-top: 70px;
   text-align: center;
-  background-color: $primary-dark1;
+  background-color: color.$primary-dark1;
+
   &__text {
     margin: 0 auto;
     width: 286px;
     margin-top: 38px;
     color: white;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: .4px;
+    font-size: .875rem;
+    line-height: 1rem;
+    letter-spacing: .025rem;
   }
 }
 
-@include media-queries.tablet {
+@include media-query.tablet {
   .footer {
     height: 271px;
     margin-top: 42px;
@@ -32,8 +34,6 @@
   }
 }
 
-@include media-queries.desktop {
-  .footer {
-    margin-top: 70px;
-  }
+@include media-query.desktop {
+  .footer { margin-top: 70px; }
 }
