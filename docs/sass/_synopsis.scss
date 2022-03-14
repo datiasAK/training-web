@@ -1,0 +1,111 @@
+@use 'color';
+@use 'media-query';
+
+.synopsis {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 19px;
+  border-radius: 6px;
+  box-shadow: 0 0 8px color.$primary-light1;
+  background-color: white;
+  padding: 8px 8px 0px;
+  width: 358px;
+  text-align: left;
+
+  &.read-all {
+    margin-top: 72px;
+  }
+
+  &__logo {
+    display: none;
+    width: 163px;
+    height: 58px;
+    position: absolute;
+    top: -91px;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__title {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.375rem;
+    line-height: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    letter-spacing: .0156rem;
+    margin-bottom: 20px;
+
+    &--read-all { display: none; }
+  }
+
+  &__button {
+    height: 48px;
+    width: 342px;
+    margin-top: -4px;
+    background: none;  
+    border: none;
+    border-top: .5px solid color.$primary-dark1;
+    cursor: pointer;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    letter-spacing: .0094rem;
+    color: color.$primary-dark1;
+
+    & i {
+      vertical-align:middle;
+      display: inline-block;
+      font-size: 1rem;
+      padding-right: 15px;
+    }
+
+    &.clicked {
+      & i {
+        transform: rotate(180deg);
+        padding: 0 0 0 15px;
+      }
+  
+      & span { display: none; }
+      &::after { content: 'Read Less'; }
+    }
+  }
+}
+
+.visible {
+  display: block;
+}
+
+@include media-query.tablet {
+  .synopsis {
+    width: 640px;
+    &__button { width: 624px; }
+    &.read-all { margin-top: 19px; }
+    &__logo.visible{ display: none; }
+  }
+}
+
+@include media-query.desktop {
+  .synopsis {
+    display: inline-block;
+    width: 300px;
+    height: 628px;
+    position: relative;
+    right: 5px;
+    padding: 32px 16px 0;
+    border-radius: 0 6px 6px 0;
+    vertical-align:bottom;
+
+    &__button { display: none; }
+    &__text--read-all { display: block; }
+  }
+}

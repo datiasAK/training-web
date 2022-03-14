@@ -1,0 +1,175 @@
+@use 'media-query';
+
+// characters
+
+.character {
+  position: relative;
+
+  &__img {
+    width: 182px;
+    height: 231px;
+  }
+
+  &__name {
+    position: absolute;
+    top: 175px;
+    width: 182px;
+    height: 2rem;
+    font-size: 1.125rem;
+    line-height: 2.875rem;  //vertical align text to bottom: line-height = 2*height - font-size
+    font-weight: 500;
+    text-align: center;
+    color: white;
+  }
+
+  &__gradient {
+    border-radius: 16.4px;
+    height: 231px;
+    position: absolute;
+    width: 182px;
+    background: 
+      linear-gradient(180deg, 
+      white 50.33%,
+      black 97.62%);
+    mix-blend-mode: multiply;
+  }
+}
+
+// islands
+
+.island {
+  position: relative;
+
+  &__img {
+    width: 194px;
+    height: 193px;
+  }
+}
+
+.card-label--island {
+  position: absolute;
+  top: 137px;
+  left: 8px;
+}
+
+// mist objects
+
+.mist-object {
+  position: relative;
+  width: 358px;
+  height: 132px;
+
+  &__img {
+    position: absolute;
+    width: 174px;
+    height: 132px;
+  }
+
+  &:nth-child(4) { display: none; }
+}
+
+.card-label--mist {
+  position: absolute;
+  left: 117px;
+}
+
+@include media-query.tablet {
+  .character {
+    &__img {
+      width: 145px;
+      height: 184px;
+    }
+
+    &__name {
+      top: 140px;
+      width: 145px;
+      height: 1.5rem;
+      font-family: 'Roboto Slab';
+      font-size: 1rem;
+      line-height: 2rem;
+      font-weight: bold;
+      letter-spacing: .0063rem;
+    }
+
+    &__gradient {
+      border-radius: 13.5px;
+      width: 145px;
+      height: 184px;
+    }
+  }
+
+  .island__img {
+    width: 200px;
+    height: 199px;
+  }
+
+  .mist-object {
+    width: 310px;
+    height: 175px;
+    
+    &__img {
+      width: 181px;
+      height: 175px;
+      object-fit:cover;
+      object-position: 0;
+    }
+
+    &:nth-child(4) { display: block; }
+  }
+
+  .card-label--island {
+    top: 141px;
+    left: 12.3px;
+  }
+
+  .card-label--mist {
+    position: absolute;
+    left: 110px;
+  }
+}
+
+@include media-query.desktop {
+  .character {
+    height: 279px;
+
+    &__img {
+      width: 220px;
+      height: 279px;
+    }
+
+    &__name {
+      top: 211px;
+      width: 220px;
+      height: 38px;
+      font-size: 1.375rem;
+      line-height: 3.375rem;
+    }
+
+    &__gradient {
+      width: 220px;
+      height: 279px;
+    }
+  }
+
+  .island__img {
+    width: 300px;
+    height: 298.5px;
+  }
+
+  .card-label--island {
+    top: 210px;
+    padding: 12.3px 0 12.3px 23.2px;
+  }
+
+  .mist-object {
+    width: 461px;
+    height: 254.3px;
+
+    &__img {
+      width: 263.2px;
+      height: 254.3px;
+    }
+  }
+
+  .card-label--mist { left: 163.6px; }
+}

@@ -1,0 +1,87 @@
+@use 'color';
+@use 'media-query';
+
+.article {
+  margin: 0 auto;
+  overflow-x: visible;
+  text-align: left;
+  width: 359px;
+  
+  &__flex {
+    display: flex;
+
+    &--characters {
+      overflow-x: scroll;
+      column-gap: 15px;
+      width:105%;
+    }
+
+    &--islands{
+      overflow-x: scroll;
+      column-gap: 17px;
+      width:115%;
+    }
+
+    &--mist {
+      flex-direction: column;
+      row-gap: 16px;
+    }
+
+    &::-webkit-scrollbar { display: none; }
+  }
+
+  &__title {
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-weight: bold;
+    color: color.$black;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    margin: 48px 0 32px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: color.$primary-dark1;
+  }
+}
+
+@include media-query.tablet {
+  .article {
+    width: 640px;
+
+    &__container--characters { margin: 32px auto; }
+    &__container--islands    { margin: 64px auto 32px; }
+    &__container--mist       { margin: 58px auto 32px; }
+
+    &__flex {
+      justify-content: space-between;
+      width: 100%;
+
+      &--mist {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include media-query.desktop {
+  .article {
+    width: 940px;
+
+    &__title {
+      font-size: 1.75rem;
+      line-height: 2.25rem;
+      font-weight: normal;
+    }
+
+    &__container--characters { margin: 48px auto 32px; }
+    &__container--islands, &__container--mist { margin: 64px auto 32px; }
+  }
+}
