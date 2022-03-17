@@ -1,0 +1,154 @@
+@use 'color';
+@use 'media-query';
+
+.header {
+  padding: 19px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  justify-content: space-between;
+  width: 100vw;
+  background-color: white;
+  z-index: 10;
+  
+  &__icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    &.hidden {
+      display: none;
+    }
+
+    &--x { 
+      display: none;
+      width: 18.38px;
+
+      &.visible {
+        display: inline;
+      }
+    }
+  }
+
+  &__logo {
+    width: 112.5px;
+    height: 40px;
+  }
+
+  &__fill {
+    width: 16px;
+    height: 40px;
+  }
+
+  .menu {
+    position: absolute;
+    padding-top: 19px;
+    display: none;
+    left: 0;
+    top: 78px;
+    width: 100vw;
+    height: 406px;
+    z-index: 10;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0px 4px 3px color.$grey5;
+
+    &.visible {
+      display: block;
+    }
+
+    &__link {
+      display: block;
+      margin-bottom: 60px;
+      font-family: 'Roboto Slab';
+      font-weight: bold;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      letter-spacing: .0063rem;
+      text-decoration: none;
+      cursor: pointer;
+      color: color.$grey0;
+
+      &:first-child { color: color.$primary-dark1; }
+    }
+
+    &__lang {
+      width: 169px;
+      height: 31px;
+      padding: 0 31.6px;
+      margin-top: -14px;
+      column-gap: 8px;
+      display:inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background-color: color.$grey4;
+
+      & span {
+        display: inline-block;
+        width: 67px;
+        font-family: 'Roboto Slab';
+        font-weight: bold;
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        letter-spacing: .0063rem;
+        color: color.$grey0;
+      }
+
+      &--es {
+        margin-left: 20px;
+        background: none;
+      }
+
+      &--open {
+        display: block;
+      }
+    }
+  }
+}
+
+@include media-query.tablet {
+  .header {
+    padding: 26px 67px 25px;
+
+    &__logo {
+      width: 163px;
+      height: 58px;
+    }
+
+    .menu { top: 109px; }
+  }
+}
+
+@include media-query.desktop {
+  .header {
+    padding: 21px 170px;
+    justify-content: center;
+    column-gap: 69px;
+
+    &__icon, &__fill { display: none; }
+
+    .menu {
+      display: flex;
+      position: static;
+      height: 31px;
+      width: 708px;
+      padding: 0;
+      box-shadow: none;
+      align-items: flex-start;
+      justify-content: flex-start ;
+
+      &__link { 
+        margin-right: 48px;
+        white-space: nowrap;
+      }
+
+      &__lang {
+        width: 90px;
+        margin: 0;
+
+        &--en { margin-right: 20px; }
+        & span { display: none; }
+      }
+    }
+  }
+}
