@@ -52,7 +52,7 @@ function replaceIslands(islandData) {
   addPrefix(islandSrc, IMG_DIR);
   replaceContent(islandSrc, ".island__img", "src");
   //replace locations
-  replaceContent(islandData.map(island => island.Location), ".card-label__description--island", "innerHTML");
+  replaceContent(islandData.map(island => island.Location), ".card-label__description--island>span", "innerHTML");
 }
 
 function addPrefix(arr, prefix) {
