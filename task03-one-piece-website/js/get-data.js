@@ -14,21 +14,19 @@ async function getData(url) {
   }
 }
 
-function sortData(data) {
-  data.islands.sort(sortByName);
-  data.characters.sort(sortByName);
-  data.mysticObjects.sort(sortByName);
-}
-
-function sortByName(a, b) {
-  return a.name > b.name ? 1 : a.name < b.name ? -1 : 0;
-}
-
 function replaceContent(content, element, property) {
   let elements = document.querySelectorAll(element);
   for (let index = 0; index < elements.length; ++index) {
     elements[index][property] = content[index];
   }
+}
+
+async function updateSections() {
+  let onePieceData = await getData(URL);
+  sortData(onePieceData);
+  replaceCharacters(onePieceData.characters);
+  replaceIslands(onePieceData.islands);
+  replaceObjects(onePieceData.mysticObjects);
 }
 
 function replaceCharacters(characterData) {
@@ -37,7 +35,6 @@ function replaceCharacters(characterData) {
   //replace images
   let characterSrc = characterData.map(character => character.img);
   addPrefix(characterSrc, IMG_DIR);
-
   replaceContent(characterSrc, ".character__img", "src");
 }
 
@@ -69,12 +66,14 @@ function addPrefix(arr, prefix) {
   }
 }
 
-async function updateSections() {
-  let onePieceData = await getData(URL);
-  sortData(onePieceData);
-  replaceCharacters(onePieceData.characters);
-  replaceIslands(onePieceData.islands);
-  replaceObjects(onePieceData.mysticObjects);
+function sortData(data) {
+  data.islands.sort(sortByName);
+  data.characters.sort(sortByName);
+  data.mysticObjects.sort(sortByName);
+}
+
+function sortByName(a, b) {
+  return a.name > b.name ? 1 : a.name < b.name ? -1 : 0;
 }
 
 updateSections();
