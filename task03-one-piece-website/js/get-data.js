@@ -5,11 +5,8 @@ async function getData(url) {
   try {
   // CORS is disabled in backend
   const response = await fetch(url);
-  onePieceData = await response.json();
-  sortData(onePieceData);
-  replaceCharacters(onePieceData.characters);
-  replaceIslands(onePieceData.islands);
-  return onePieceData;
+  data = await response.json();
+  return data;
 
   } catch (error) {
     console.log("Error fetching data");
@@ -55,8 +52,29 @@ function replaceIslands(islandData) {
   replaceContent(islandData.map(island => island.Location), ".card-label__description--island>span", "innerHTML");
 }
 
+function replaceObjects(objectData) {
+  //replace names
+  replaceContent(objectData.map(object => object.name), ".card-label__name--mist", "innerHTML");
+  //replace images
+  let objectSrc = objectData.map(object => object.img);
+  addPrefix(objectSrc, IMG_DIR);
+  replaceContent(objectSrc, ".mist-object__img", "src");
+  //replace description
+  replaceContent(objectData.map(object => object.description), ".card-label__description--mist", "innerHTML");
+}
+
 function addPrefix(arr, prefix) {
   for (let index = 0; index < arr.length; ++index) {
     arr[index] = prefix + arr[index];
   }
 }
+
+async function updateSections() {
+  let onePieceData = await getData(URL);
+  sortData(onePieceData);
+  replaceCharacters(onePieceData.characters);
+  replaceIslands(onePieceData.islands);
+  replaceObjects(onePieceData.mysticObjects);
+}
+
+updateSections();
