@@ -1,3 +1,5 @@
+"use strict";
+
 const URL = "https://static.akurey.com/trainings/OnePieceInformation.json";
 const IMG_DIR = "../assets/img/";
 
@@ -5,7 +7,7 @@ async function getData(url) {
   try {
   // CORS is disabled in backend
   const response = await fetch(url);
-  data = await response.json();
+  let data = await response.json();
   return data;
 
   } catch (error) {
