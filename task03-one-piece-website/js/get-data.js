@@ -3,17 +3,10 @@
 const URL = "https://static.akurey.com/trainings/OnePieceInformation.json";
 const IMG_DIR = "../assets/img/";
 
-async function getData(url) {
-  try {
-  // CORS is disabled in backend
-  const response = await fetch(url);
-  let data = await response.json();
-  return data;
-
-  } catch (error) {
-    console.log("Error fetching data");
-    console.log(error);
-  }
+function getData(url) {
+  return fetch(url).then(response => response.json()).catch(error => {
+    console.log("Error fetching data: " + error);
+  });
 }
 
 function replaceContent(content, element, property) {
@@ -23,48 +16,37 @@ function replaceContent(content, element, property) {
   }
 }
 
-async function updateSections() {
-  let onePieceData = await getData(URL);
-  sortData(onePieceData);
-  replaceCharacters(onePieceData.characters);
-  replaceIslands(onePieceData.islands);
-  replaceObjects(onePieceData.mysticObjects);
+function updateSections() {
+  getData(URL).then(function(onePieceData) {
+    sortData(onePieceData);
+    updateImgPaths(onePieceData);
+    // character section
+    updateSection(onePieceData.characters, ["name", "img"], [".character__name", ".character__img"], ["innerHTML", "src"]);
+
+    // islands section
+    updateSection(onePieceData.islands, ["name", "img", "Location"], 
+                                        [".card-label__name--island", ".island__img", ".card-label__description--island>span"],
+                                        ["innerHTML", "src", "innerHTML"]);
+
+    // mystic objects section
+    updateSection(onePieceData.mysticObjects, ["name", "img", "description"],
+                                              [".card-label__name--mist", ".mist-object__img", ".card-label__description--mist"],
+                                              ["innerHTML", "src", "innerHTML"]);
+  });
 }
 
-function replaceCharacters(characterData) {
-  //replace names
-  replaceContent(characterData.map(character => character.name), ".character__name", "innerHTML");
-  //replace images
-  let characterSrc = characterData.map(character => character.img);
-  addPrefix(characterSrc, IMG_DIR);
-  replaceContent(characterSrc, ".character__img", "src");
-}
-
-function replaceIslands(islandData) {
-  //replace names
-  replaceContent(islandData.map(island => island.name), ".card-label__name--island", "innerHTML");
-  //replace images
-  let islandSrc = islandData.map(island => island.img);
-  addPrefix(islandSrc, IMG_DIR);
-  replaceContent(islandSrc, ".island__img", "src");
-  //replace locations
-  replaceContent(islandData.map(island => island.Location), ".card-label__description--island>span", "innerHTML");
-}
-
-function replaceObjects(objectData) {
-  //replace names
-  replaceContent(objectData.map(object => object.name), ".card-label__name--mist", "innerHTML");
-  //replace images
-  let objectSrc = objectData.map(object => object.img);
-  addPrefix(objectSrc, IMG_DIR);
-  replaceContent(objectSrc, ".mist-object__img", "src");
-  //replace description
-  replaceContent(objectData.map(object => object.description), ".card-label__description--mist", "innerHTML");
-}
-
-function addPrefix(arr, prefix) {
-  for (let index = 0; index < arr.length; ++index) {
-    arr[index] = prefix + arr[index];
+/**
+ * Updates the specified elements with the given data. Values, selectors and properties must have the same index in 
+ * their respective arrays to address the same element. 
+ * 
+ * @param {object[]} data list of objects with the data to be applied
+ * @param {string[]} values list of values to be taken from each object in data e.g data[value[0]]
+ * @param {string[]} selectors list of css selectors to get the html elements from the DOM
+ * @param {string[]} properties list of properties of the html element to be modified
+ */
+function updateSection(data, values, selectors, properties) {
+  for (let index = 0; index < values.length; ++index) {
+    replaceContent(data.map(item => item[values[index]]), selectors[index], properties[index]);
   }
 }
 
@@ -72,6 +54,17 @@ function sortData(data) {
   data.islands.sort(sortByName);
   data.characters.sort(sortByName);
   data.mysticObjects.sort(sortByName);
+}
+
+function updateImgPaths(data) {
+  Object.keys(data).forEach(function(property) { 
+    if (typeof data[property] == "object" && property !== null) { 
+        updateImgPaths(data[property]);
+    }
+    else if (property == "img") {
+        data[property] = IMG_DIR + data[property];
+    }
+  })
 }
 
 function sortByName(a, b) {
