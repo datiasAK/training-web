@@ -20,18 +20,20 @@ function updateSections() {
   getData(URL).then(function(onePieceData) {
     sortData(onePieceData);
     updateImgPaths(onePieceData);
+    const values = ["name", "img"];
+    const properties = ["innerHTML", "src", "innerHTML"];
+    const selectors = { 
+                        characters: [".character__name", ".character__img"],
+                        islands: [".card-label__name--island", ".island__img", ".card-label__description--island>span"],
+                        items: [".card-label__name--mist", ".mist-object__img", ".card-label__description--mist"]
+                      };
+
     // character section
-    updateSection(onePieceData.characters, ["name", "img"], [".character__name", ".character__img"], ["innerHTML", "src"]);
-
+    updateSection(onePieceData.characters, values, selectors.characters, properties.slice(0,2));
     // islands section
-    updateSection(onePieceData.islands, ["name", "img", "Location"], 
-                                        [".card-label__name--island", ".island__img", ".card-label__description--island>span"],
-                                        ["innerHTML", "src", "innerHTML"]);
-
+    updateSection(onePieceData.islands, values.concat("Location"), selectors.islands, properties);
     // mystic objects section
-    updateSection(onePieceData.mysticObjects, ["name", "img", "description"],
-                                              [".card-label__name--mist", ".mist-object__img", ".card-label__description--mist"],
-                                              ["innerHTML", "src", "innerHTML"]);
+    updateSection(onePieceData.mysticObjects, values.concat("description"),selectors.items, properties);
   });
 }
 
