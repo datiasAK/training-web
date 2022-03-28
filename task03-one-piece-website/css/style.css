@@ -194,6 +194,10 @@ body, html {
   background-color: rgba(0, 96, 150, 0.59);
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
+  overflow-y: scroll;
+}
+.card-label::-webkit-scrollbar {
+  display: none;
 }
 .card-label__name {
   color: white;
