@@ -1,24 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import { Footer } from './components/Footer';
+import skull from './assets/img/op-skull.svg'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Footer 
+      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit at vel congue scelerisque tortor tortor."
+      img={{src: skull, alt: "one piece skull"}} 
+    />
   );
 }
 
