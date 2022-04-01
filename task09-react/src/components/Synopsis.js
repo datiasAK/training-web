@@ -18,7 +18,7 @@ class Synopsis extends Component {
     return (
       <>
         <div className={`op-characters ${this.state.readAll ? "read-all" : ""}`}>
-          <img className="op-characters__img" src={opCharacters} srcset={`${opCharacters} 768w, ${opCharactersBig} 8530w`} alt="one piece main characters" />
+          <img className="op-characters__img" src={opCharacters} srcSet={`${opCharacters} 768w, ${opCharactersBig} 8530w`} alt="one piece main characters" />
           <div className="op-characters__gradient"></div>
         </div>
           <article className={`synopsis ${this.state.readAll ? "read-all" : ""}`}>
