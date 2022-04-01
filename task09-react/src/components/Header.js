@@ -19,15 +19,15 @@ class Header extends Component {
     return (
       <header className="header">
         <i
-          class={`ico-menu header__icon header__icon--menu ${this.state.clicked ? "hidden": ""}`}
+          className={`ico-menu header__icon header__icon--menu ${this.state.clicked ? "hidden": ""}`}
           onClick={this.handkeClick}
         ></i>
         <i
-          class={`ico-x header__icon header__icon--x ${visibility}`}
+          className={`ico-x header__icon header__icon--x ${visibility}`}
           onClick={this.handkeClick}  
         ></i>
-        <img class="header__logo" src={logo} alt="one piece logo"/>
-        <div class="header__fill"></div>
+        <img className="header__logo" src={logo} alt="one piece logo"/>
+        <div className="header__fill"></div>
         <Menu visibility={visibility}/>
       </header>
     );
