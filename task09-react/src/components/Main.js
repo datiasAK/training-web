@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CharacterSection from './CharacterSection';
-import Islandsection from './IslandSection';
+import IslandSection from './IslandSection';
 import ObjectSection from './ObjectSection';
 import Search from './Search';
 import Synopsis from './Synopsis';
@@ -12,7 +12,7 @@ class Main extends Component {
         <Synopsis />
         <Search />
         <CharacterSection />
-        <Islandsection />
+        <IslandSection />
         <ObjectSection />
       </main>
     );
