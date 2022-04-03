@@ -6,6 +6,15 @@ import zoro from '../assets/img/zoro.svg';
 import nico from '../assets/img/nico.svg';
 
 class CharacterSection extends Component {
+  characters = [{ name: 'Monkey D. Luffy', img: luffy},
+                { name: 'Portgas D. Ace', img: ace},
+                { name: 'Roronoa Zoro', img: zoro},
+                { name: 'Nico Robin', img: nico}];
+  renderCharacters() {
+    return this.characters.map((c, index) => {
+      return <Character key={index} name={c.name} img={c.img} alt={c.name}/>;
+    });
+  }
   render() { 
     return (
       <article className="article article--characters">
@@ -14,10 +23,7 @@ class CharacterSection extends Component {
           <a href="#" className="article__link article__link--characters">See all</a>
         </div>
         <div className="article__flex article__flex--characters">
-          <Character name="Monkey D. Luffy" img={luffy} alt="Monkey D. Luffy" />
-          <Character name="Portgas D. Ace" img={ace} alt="Ace" />
-          <Character name="Roronoa Zoro" img={zoro} alt="Zoro" />
-          <Character name="Nico Robin" img={nico} alt="Nico Robin" />
+          {this.renderCharacters()}
         </div>
       </article>
     );
