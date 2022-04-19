@@ -1,9 +1,6 @@
 <template>
   <nav :class="`menu ${state}`">
-    <a href="#" class="menu__link">Home</a>
-    <a href="#" class="menu__link">Characters</a>
-    <a href="#" class="menu__link">Islands</a>
-    <a href="#" class="menu__link">Mist Objects</a>
+    <a v-for="link in menuLinks" :key="link" class="menu__link">{{link}}</a>
     <button :class="`menu__lang menu__lang--en ${state}`">
       <span>English</span>
       <img src="../assets/usa-flag.svg"/>
@@ -24,5 +21,10 @@
         default: 'hidden',
       },
     },
+    data() {
+      return {
+        menuLinks: ['Home', 'Characters', 'Islands', 'Mist Objects']
+      }
+    }
   }
   </script>
