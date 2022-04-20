@@ -1,6 +1,6 @@
 <template>
   <main class="main">
-    <SynopsisSection />
+    <SynopsisSection :width="width"/>
     <SearchBar />
     <CharacterSection />
     <IslandSection />

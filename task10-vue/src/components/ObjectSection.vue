@@ -10,6 +10,7 @@
         :key="mistObject.name"
         :name="mistObject.name"
         :img="mistObject.img"
+        :alt="mistObject.name"
         :description="mistObject.description"
       />
     </div>
