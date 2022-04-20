@@ -24,7 +24,6 @@ export default {
   data() {
     return {
       opened: false,
-      menuState: 'hidden',
     }
   },
   methods: {
