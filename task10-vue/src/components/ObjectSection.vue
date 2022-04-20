@@ -6,7 +6,7 @@
     </div>
     <div className="article__flex article__flex--mist">
       <MysticObjectCard
-        v-for="mistObject in createObjects(4)"
+        v-for="mistObject in createObjects(objectCount)"
         :key="mistObject.name"
         :name="mistObject.name"
         :img="mistObject.img"
@@ -23,6 +23,12 @@
     name: 'MistSection',
     components: {
       MysticObjectCard,
+    },
+    props: {
+      objectCount: {
+        type: Number,
+        required: true,
+      },
     },
     methods: {
       createObjects(objectCount) {

@@ -4,7 +4,7 @@
     <SearchBar />
     <CharacterSection />
     <IslandSection />
-    <ObjectSection />
+    <ObjectSection :objectCount="width < 768 ? 3 : 4"/>
   </main>
 </template>
 
@@ -23,5 +23,22 @@ export default {
     IslandSection,
     ObjectSection,
   },
+  mounted() {
+    window.addEventListener('resize', this.onResize);
+  },
+
+  beforeUnmount() { 
+    window.removeEventListener('resize', this.onResize); 
+  },
+  data() {
+    return {
+      width: window.innerWidth,
+    }
+  },
+  methods: {
+    onResize() {
+      this.width = window.innerWidth
+    }
+  }
 }
 </script>
