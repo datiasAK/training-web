@@ -1,7 +1,7 @@
 <template>
   <header class="header">
-    <i :class="`ico-menu header__icon header__icon--menu ${menuState}`" @click="handleClick"></i>
-    <i :class="`ico-x header__icon header__icon--x ${menuState}`" @click="handleClick"></i>
+    <i :class="`ico-menu header__icon header__icon--menu`" v-if="!opened" @click="handleClick"></i>
+    <i :class="`ico-x header__icon header__icon--x `" v-if="opened" @click="handleClick"></i>
     <img class="header__logo" src="../assets/op-logo.svg" alt="one piece logo"/>
     <div class="header__fill"></div>
     <HeaderMenu :state="menuState" />

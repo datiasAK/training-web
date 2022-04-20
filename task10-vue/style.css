@@ -64,15 +64,8 @@ body, html {
   font-size: 1.5rem;
   cursor: pointer;
 }
-.header__icon--menu.opened {
-  display: none;
-}
 .header__icon--x {
-  display: none;
   width: 18.38px;
-}
-.header__icon--x.opened {
-  display: inline;
 }
 .header__logo {
   width: 112.5px;
