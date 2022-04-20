@@ -6,8 +6,8 @@
     </div>
     <div className="article__flex article__flex--mist">
       <MysticObjectCard
-        v-for="mistObject in createObjects(objectCount)"
-        :key="mistObject.name"
+        v-for="(mistObject, index) in createObjects(objectCount)"
+        :key="index"
         :name="mistObject.name"
         :img="mistObject.img"
         :alt="mistObject.name"

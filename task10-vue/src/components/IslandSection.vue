@@ -6,8 +6,8 @@
     </div>
     <div class="article__flex article__flex--islands">
       <IslandCard
-        v-for="island in islands"
-        :key="island.name"
+        v-for="(island, index) in islands"
+        :key="index"
         :name="island.name"
         :img="island.img"
         :location="island.location"
