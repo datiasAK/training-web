@@ -78,7 +78,7 @@ body, html {
 .header .menu {
   position: absolute;
   padding-top: 19px;
-  display: none;
+  /* display: none; */
   left: 0;
   top: 78px;
   width: 100vw;

@@ -4,7 +4,7 @@
     <i :class="`ico-x header__icon header__icon--x `" v-if="opened" @click="handleClick"></i>
     <img class="header__logo" src="../assets/op-logo.svg" alt="one piece logo"/>
     <div class="header__fill"></div>
-    <HeaderMenu :state="menuState" />
+    <HeaderMenu :opened="opened || width >= 1280" />
   </header>
 </template>
 
@@ -15,6 +15,12 @@ export default {
   components: {
     HeaderMenu,
   },
+  props: {
+    width: {
+      type: Number,
+      required: true,
+    },
+  },
   data() {
     return {
       opened: false,
@@ -24,7 +30,6 @@ export default {
   methods: {
     handleClick() {
       this.opened = !this.opened;
-      this.menuState = this.opened ? 'opened' : 'hidden';
     },
   },
 }

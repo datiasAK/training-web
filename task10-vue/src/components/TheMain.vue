@@ -23,22 +23,11 @@ export default {
     IslandSection,
     ObjectSection,
   },
-  mounted() {
-    window.addEventListener('resize', this.onResize);
+  props: {
+    width: {
+      type: Number,
+      required: true,
+    },
   },
-
-  beforeUnmount() { 
-    window.removeEventListener('resize', this.onResize); 
-  },
-  data() {
-    return {
-      width: window.innerWidth,
-    }
-  },
-  methods: {
-    onResize() {
-      this.width = window.innerWidth
-    }
-  }
 }
 </script>

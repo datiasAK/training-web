@@ -1,5 +1,5 @@
 <template>
-  <nav :class="`menu ${state}`">
+  <nav :class="`menu`" v-if="opened">
     <a v-for="link in menuLinks" :key="link" class="menu__link">{{link}}</a>
     <IconButton
       v-for="btn in menuBtns"
@@ -7,7 +7,7 @@
       :text="btn.text"
       :img="btn.img"
       :alt="btn.alt"
-      :className="`menu__lang menu__lang--${btn.modifier} ${state}`"
+      :className="`menu__lang menu__lang--${btn.modifier}`"
     />
   </nav>
 </template>
@@ -20,9 +20,9 @@
       IconButton
     },
     props: {
-      state: {
-        type: String,
-        default: 'hidden',
+      opened: {
+        type: Boolean,
+        required: true,
       },
     },
     data() {
