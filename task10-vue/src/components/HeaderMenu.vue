@@ -1,20 +1,24 @@
 <template>
   <nav :class="`menu ${state}`">
     <a v-for="link in menuLinks" :key="link" class="menu__link">{{link}}</a>
-    <button :class="`menu__lang menu__lang--en ${state}`">
-      <span>English</span>
-      <img src="../assets/usa-flag.svg"/>
-    </button>
-    <button :class="`menu__lang menu__lang--es ${state}`">
-      <span>Spanish</span>
-      <img src="../assets/spain-flag.svg"/>
-    </button>
+    <IconButton
+      v-for="btn in menuBtns"
+      :key="btn.text"
+      :text="btn.text"
+      :img="btn.img"
+      :alt="btn.alt"
+      :className="`menu__lang menu__lang--${btn.modifier} ${state}`"
+    />
   </nav>
 </template>
 
 <script>
+  import IconButton from './IconButton.vue'
   export default {
     name: 'HeaderMenu',
+    components: {
+      IconButton
+    },
     props: {
       state: {
         type: String,
@@ -23,7 +27,11 @@
     },
     data() {
       return {
-        menuLinks: ['Home', 'Characters', 'Islands', 'Mist Objects']
+        menuLinks: ['Home', 'Characters', 'Islands', 'Mist Objects'],
+        menuBtns: [
+          {text: 'English', img: require('../assets/usa-flag.svg'), alt: 'usa flag', modifier: 'en'},
+          {text: 'Spanish', img: require('../assets/spain-flag.svg'), alt: 'spain flag', modifier: 'es'}
+        ],
       }
     }
   }
