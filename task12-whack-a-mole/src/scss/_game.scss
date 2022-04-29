@@ -1,0 +1,24 @@
+@use './abstracts';
+
+h1 {
+  text-align: center;
+  font-size: 10rem;
+  line-height: 1;
+  margin: 2rem 5rem;
+  background: abstracts.$primary-yellow;  
+  font-family: 'Amatic SC', cursive;
+}
+
+.score {
+  background: rgba(255,255,255,0);
+  line-height: 1;
+  border-radius: 1rem;
+}
+
+.game {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}

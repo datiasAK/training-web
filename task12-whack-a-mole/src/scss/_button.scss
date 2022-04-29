@@ -1,0 +1,9 @@
+@use './abstracts';
+
+button {
+  position: absolute;
+  left: 15rem;
+  padding: 2rem;
+  font-size: x-large;
+  background-color: abstracts.$secondary-red;
+}

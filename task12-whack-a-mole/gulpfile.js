@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const sass = require ('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const browsersync = require('browser-sync').create();
@@ -20,7 +20,7 @@ gulp.task("sass", () => {
       })
     )
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./assets'))
+    .pipe(gulp.dest('./src/assets'))
     .pipe(browsersync.reload({ stream: true }));
 });
 
