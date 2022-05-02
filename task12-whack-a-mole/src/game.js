@@ -3,11 +3,14 @@ game.initialize();
 
 function Game() {
     const holes = document.querySelectorAll('.hole');
-    const scoreBoard = document.querySelector('.score');
+    const scoreBoard = document.querySelector('.score span');
     const moles = document.querySelectorAll('.mole');
+    const [failAudio, hitAudio] = document.querySelectorAll('audio');
+    const playerName = document.querySelector('.play-form__input');
+    const leaderBoardScore = document.querySelectorAll('.leaderboard-item__score');
+    const leaderBoardName = document.querySelectorAll('.leaderboard-item__name');
     const minPeepTime = 1000;
     const maxPeepTime = 1000;
-    const [failAudio, hitAudio] = document.querySelectorAll('audio');
     let lastHole;
     let timeUp = true;
     let score = 0;
@@ -48,7 +51,10 @@ function Game() {
         timeUp = false;
         score = 0;
         this.peep();
-        setTimeout(() => timeUp = true, 10000)
+        setTimeout(() => {
+            timeUp = true;
+            this.saveScore();
+        }, 10000)
     }
 
     this.bonk = e => {
@@ -58,6 +64,21 @@ function Game() {
             hitAudio.play();
             e.target.parentElement.classList.remove('up');
             scoreBoard.textContent = score;
+        }
+    }
+    
+    this.saveScore = () => {
+        const score = scoreBoard.textContent;
+        for (let i = 0; i < leaderBoardScore.length; i++) {
+            if (parseInt(score) > parseInt(leaderBoardScore[i].textContent)) {
+                for (let j = leaderBoardScore.length - 1; j > i; j--) {
+                    leaderBoardScore[j].textContent = leaderBoardScore[j - 1].textContent;
+                    leaderBoardName[j].textContent = leaderBoardName[j - 1].textContent;
+                }
+                leaderBoardScore[i].textContent = score;
+                leaderBoardName[i].textContent = playerName.value;
+                break;
+            }
         }
     }
 }
