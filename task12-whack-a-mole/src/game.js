@@ -9,8 +9,8 @@ function Game() {
     const playerName = document.querySelector('.play-form__input');
     const leaderBoardScore = document.querySelectorAll('.leaderboard-item__score');
     const leaderBoardName = document.querySelectorAll('.leaderboard-item__name');
-    const minPeepTime = 1000;
-    const maxPeepTime = 1000;
+    let minPeepTime = 1000;
+    let maxPeepTime = 1000;
     let lastHole;
     let timeUp = true;
     let score = 0;
@@ -54,6 +54,7 @@ function Game() {
         setTimeout(() => {
             timeUp = true;
             this.saveScore();
+            this.changeLevel();
         }, 10000)
     }
 
@@ -69,6 +70,10 @@ function Game() {
     
     this.saveScore = () => {
         const score = scoreBoard.textContent;
+        let name = playerName.value;
+        if (name === '') {
+            name = 'Anonymous';
+        }
         for (let i = 0; i < leaderBoardScore.length; i++) {
             if (parseInt(score) > parseInt(leaderBoardScore[i].textContent)) {
                 for (let j = leaderBoardScore.length - 1; j > i; j--) {
@@ -76,9 +81,20 @@ function Game() {
                     leaderBoardName[j].textContent = leaderBoardName[j - 1].textContent;
                 }
                 leaderBoardScore[i].textContent = score;
-                leaderBoardName[i].textContent = playerName.value;
+                leaderBoardName[i].textContent = name;
                 break;
             }
+        }
+    }
+
+    this.changeLevel = () => {
+        const currentLevel = document.querySelector('.level__number--selected');
+        if (currentLevel.textContent < 5 && scoreBoard.textContent >= 5) {
+            currentLevel.classList.remove('level__number--selected');
+            currentLevel.nextElementSibling.classList.add('level__number--selected');
+            currentLevel.nextElementSibling.classList.remove('level__number--locked');
+            minPeepTime = minPeepTime - 200;
+            maxPeepTime = maxPeepTime - 100;
         }
     }
 }
