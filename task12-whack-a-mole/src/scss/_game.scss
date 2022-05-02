@@ -23,6 +23,26 @@ h1 {
   display: flex;
   row-gap: 30px;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 20px auto 0;
   cursor: url('../assets/imgs/hammer.png'), default;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 6rem;
+    line-height: 6.5rem;
+  }
+  .score {
+    font-size: 3.125rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  h1 {
+    font-size: 8rem;
+    line-height: 8.5rem;
+  }
+  .score {
+    font-size: 4.25rem;
+  }
 }

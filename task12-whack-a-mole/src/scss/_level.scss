@@ -10,3 +10,14 @@
     &--locked { color: grey;}
   }
 }
+
+@media (min-width: 768px) {
+  .level {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .level {
+    font-size: 3rem;
+  }
+}
