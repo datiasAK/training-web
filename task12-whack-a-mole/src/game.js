@@ -5,14 +5,20 @@ function Game() {
     const holes = document.querySelectorAll('.hole');
     const scoreBoard = document.querySelector('.score');
     const moles = document.querySelectorAll('.mole');
-    const minPeepTime = 200;
+    const minPeepTime = 1000;
     const maxPeepTime = 1000;
+    const [failAudio, hitAudio] = document.querySelectorAll('audio');
     let lastHole;
-    let timeUp = false;
+    let timeUp = true;
     let score = 0;
 
     this.initialize = () => {
         moles.forEach(mole => mole.addEventListener('click', this.bonk));
+        holes.forEach(hole => hole.addEventListener('click', (e) => {
+            if(!e.target.classList.contains('mole') && !timeUp) {
+                failAudio.play();
+            }
+        }));
     }
 
     this.randomTime = (min, max) => {
@@ -47,8 +53,11 @@ function Game() {
 
     this.bonk = e => {
         if (!e.isTrusted) return;
-        score++;
-        e.target.classList.remove('up');
-        scoreBoard.textContent = score;
+        if(e.target.parentElement.classList.contains('up')) {
+            score++;
+            hitAudio.play();
+            e.target.parentElement.classList.remove('up');
+            scoreBoard.textContent = score;
+        }
     }
 }

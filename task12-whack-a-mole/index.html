@@ -3,12 +3,15 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTML + JS + CSS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/assets/style.css">
 </head>
 
 <body>
-  <h1>Whack-a-mole! <span class="score">0</span></h1>
+  <h1>Whack-a-mole!</h1>
+  <p class="score">Score: 0</p>
   <div class="game">
     <div class="hole hole1">
       <div class="mole"></div>
@@ -28,8 +31,56 @@
     <div class="hole hole6">
       <div class="mole"></div>
     </div>
+    <div class="hole hole7">
+      <div class="mole"></div>
+    </div>
+    <div class="hole hole8">
+      <div class="mole"></div>
+    </div>
+    <div class="hole hole9">
+      <div class="mole"></div>
+    </div>
   </div>
-  <button onClick="game.startGame()">WHACK!</button>
+  <div class="level">
+    <span class="level__text">Level</span>
+    <span class="level__number level__number--selected">1</span>
+    <span class="level__number level__number--locked">2</span>
+    <span class="level__number level__number--locked">3</span>
+    <span class="level__number level__number--locked">4</span>
+    <span class="level__number level__number--locked">5</span>
+  </div>
+  <div class="play-form">
+    <input type="text" class="play-form__input" placeholder="Enter your name">
+    <button class="play-form__button" onClick="game.startGame()">WHACK!</button>
+  </div>
+  <div class="leaderboard">
+    <h2 class="leaderboard__title">LeaderBoard</h2>
+    <div class="leaderboard-item">
+      <span class="leaderboard-item__place">1</span>
+      <span class="leaderboard-item__name">-</span>
+      <span class="leaderboard-item__score"></span>
+    </div>
+    <div class="leaderboard-item">
+      <span class="leaderboard-item__place">2</span>
+      <span class="leaderboard-item__name">-</span>
+      <span class="leaderboard-item__score"></span>
+    </div>
+    <div class="leaderboard-item">
+      <span class="leaderboard-item__place">3</span>
+      <span class="leaderboard-item__name">-</span>
+      <span class="leaderboard-item__score"></span>
+    </div>
+    <div class="leaderboard-item">
+      <span class="leaderboard-item__place">4</span>
+      <span class="leaderboard-item__name">-</span>
+      <span class="leaderboard-item__score"></span>
+    </div>
+    <div class="leaderboard-item">
+      <span class="leaderboard-item__place">5</span>
+      <span class="leaderboard-item__name">-</span>
+      <span class="leaderboard-item__score"></span>
+    </div>
+  </div>
   <audio src="src/assets/sounds/hihat.wav"></audio>
   <audio src="src/assets/sounds/kick.wav"></audio>
   <script src="src/game.js"></script>
