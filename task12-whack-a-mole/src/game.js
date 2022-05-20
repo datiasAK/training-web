@@ -9,6 +9,7 @@ function Game() {
     const playerName = document.querySelector('.play-form__input');
     const leaderBoardScore = document.querySelectorAll('.leaderboard-item__score');
     const leaderBoardName = document.querySelectorAll('.leaderboard-item__name');
+    const defaultTime = 10000;
     let minPeepTime = 1000;
     let maxPeepTime = 1000;
     let lastHole;
@@ -55,7 +56,7 @@ function Game() {
             timeUp = true;
             this.saveScore();
             this.changeLevel();
-        }, 10000)
+        }, defaultTime)
     }
 
     this.bonk = e => {
@@ -70,10 +71,7 @@ function Game() {
     
     this.saveScore = () => {
         const score = scoreBoard.textContent;
-        let name = playerName.value;
-        if (name === '') {
-            name = 'Anonymous';
-        }
+        let name = playerName.value || 'Anonymous';
         for (let i = 0; i < leaderBoardScore.length; i++) {
             if (parseInt(score) > parseInt(leaderBoardScore[i].textContent)) {
                 for (let j = leaderBoardScore.length - 1; j > i; j--) {
