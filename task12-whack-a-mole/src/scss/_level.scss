@@ -1,0 +1,23 @@
+.level {
+  margin-top: 10px;
+  font-size: 1.5rem;
+
+  &__number {
+    font-weight: bold;
+    margin-left: 10px;
+    color: black;
+    &--selected { color: cornflowerblue;}
+    &--locked { color: grey;}
+  }
+}
+
+@media (min-width: 768px) {
+  .level {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .level {
+    font-size: 3rem;
+  }
+}

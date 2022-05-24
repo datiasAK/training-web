@@ -1,0 +1,54 @@
+.leaderboard {
+  &__title {
+    margin: 10px 0;
+  }
+}
+
+.leaderboard-item {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3px;
+  margin: 0 auto 3px;
+  height: 40px;
+  max-width: 768px;
+  &__place {
+    font-family: sans-serif;
+    display: inline-block;
+    width: 10%;
+    height: 40px;
+    background-color: #B0AA93;
+    border: 2px solid black;
+    border-right: none;
+    border-radius: 7px 0 0 7px;
+  }
+  &__name {
+    font-family: sans-serif;
+    display: inline-block;
+    width: 55%;
+    height: 40px;
+    background-color: #fff;
+    border: 2px solid black;
+  }
+  &__score {
+    font-family: sans-serif;
+    display: inline-block;
+    width: 15%;
+    height: 40px;
+    background-color: #fff;
+    border: 2px solid black;
+    border-left: none;
+    border-radius: 0 7px 7px 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .leaderboard__title {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .leaderboard__title {
+    font-size: 3rem;
+  }
+}
